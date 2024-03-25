@@ -8,6 +8,7 @@ import math
 from timm.models.vision_transformer import _cfg
 from timm.models.registry import register_model
 from timm.models.layers import trunc_normal_, DropPath, to_2tuple
+from huggingface_hub import PyTorchModelHubMixin
 
 
 layer_scale = False
@@ -283,7 +284,7 @@ class EvoSABlock(nn.Module):
             return cls_token, x_patch
    
 
-class PatchEmbed(nn.Module):
+class PatchEmbed(nn.Module, ):
     """ Image to Patch Embedding
     """
     def __init__(self, patch_size=16, in_chans=3, embed_dim=768):
@@ -330,7 +331,7 @@ class middle_embedding(nn.Module):
         return x
 
     
-class UniFormer_Light(nn.Module):
+class UniFormer_Light(nn.Module, PyTorchModelHubMixin):
     """ Vision Transformer
     A PyTorch impl of : `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`  -
         https://arxiv.org/abs/2010.11929
