@@ -331,7 +331,10 @@ class middle_embedding(nn.Module):
         return x
 
     
-class UniFormer_Light(nn.Module, PyTorchModelHubMixin):
+class UniFormer_Light(nn.Module,
+                    PyTorchModelHubMixin,
+                    library_name = "UniFormer",
+                    repo_url = "https://github.com/Sense-X/UniFormer"):
     """ Vision Transformer
     A PyTorch impl of : `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`  -
         https://arxiv.org/abs/2010.11929
