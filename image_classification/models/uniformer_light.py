@@ -284,7 +284,7 @@ class EvoSABlock(nn.Module):
             return cls_token, x_patch
    
 
-class PatchEmbed(nn.Module, ):
+class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
     def __init__(self, patch_size=16, in_chans=3, embed_dim=768):
